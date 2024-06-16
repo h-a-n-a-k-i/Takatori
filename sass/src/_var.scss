@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+$new-breakpoints: (
+	xs: 428px,
+	sm: 600px,
+	md: 768px, // default
+	lg: 1280px,
+	xl: 1400px
+) !default;
+
+$breakpoints: (
+	"xs": "screen and (max-width: 428px)",
+	"sm": "screen and (max-width: 600px)",
+	"md": "screen and (max-width: 768px)", // default
+	"lg": "screen and (max-width: 1280px)",
+	"xl": "screen and (max-width: 1400px)",
+) !default;
+
+$base: 1280;
+$base_sp: 375;
+
+$font_family: "Noto Sans JP", sans-serif;
+$font_barlow: "Barlow Semi Condensed", sans-serif;
+
+$color_main: #156F9A;
+$color_base: #F2F7F9;
+$color_01: #000;
+$color_02: #000;
+$color_03: #000;
+$color_04: #000;
+$color_05: #000;
+$color_red: #BF4343;
+$color_yellow: yellow;
+$color_link: #000;
+
+$font_color: #000;
+$font_size: 16;
+$font_size_sp: 15;

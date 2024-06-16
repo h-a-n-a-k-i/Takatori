@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+@use 'files' as *;
+
+html {
+	@include m-min(lg){
+		font-size: $font_size + px;
+	}
+	font-size: calc(100vw / #{$base} * #{$font_size});
+	@include m-max(){
+		font-size: calc(100vw / #{$base_sp} * #{$font_size_sp});
+	}
+}
+body {
+	font-family: $font_family;
+	color: $font_color;
+	font-weight: 500;
+	line-height: 2;
+}
+a {
+	color: $color_link;
+	&:hover {
+		@include opacity(0.9);
+	}
+}
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+pre {
+	white-space: pre;
+}
+p{
+	letter-spacing: 0.05em;
+}

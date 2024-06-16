@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+@use 'var' as *;
+
+@mixin box($padding: $pad, $margin: 0) {
+	padding: $padding;
+	margin: $margin;
+}
+
+// https://ferret-plus.com/6638
+@mixin center {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin link-color($color) {
+	color: $color;
+	&:hover,
+	&:active,
+	&:focus {
+		color: lighten($color, 20%);
+	}
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$ieopacity: ($opacity * 100);
+	filter: alpha(opacity=$ieopacity);
+}
+
+@mixin font-size($size, $base: $font_size) {
+	font-size: $size + px;
+	font-size: ($size / $base) + rem;
+}
+
+@mixin trianglearrow($direction: right, $size: 12, $color: $gray) {
+	$set: left;
+
+	@if $direction == left {
+		$set: right;
+	}
+	@elseif $direction == top {
+		$set: bottom;
+	}
+	@elseif $direction == bottom {
+		$set: top;
+	} @else {
+		$set: left;
+	}
+	$size: round($size / 2);
+
+	width: 0;
+	height: 0;
+	border: $size + px solid transparent;
+	border-#{$set}-color: $color;
+}
+
+@mixin arrow($size, $border-width, $border-style, $border-color, $direction) {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	width: $size;
+	height: $size;
+	margin-top: -($size / 2);
+	border: $border-width $border-style $border-color;
+	@if $direction == up {
+		-webkit-transform: rotate(-135) + deg;
+		-moz-transform: rotate(-135) + deg;
+		transform: rotate(-135) + deg;
+	} @else if $direction == under {
+		-webkit-transform: rotate(45) + deg;
+		-moz-transform: rotate(45) + deg;
+		transform: rotate(45) + deg;
+	} @else if $direction == right {
+		-webkit-transform: rotate(-45) + deg;
+		-moz-transform: rotate(-45) + deg;
+		transform: rotate(-45) + deg;
+	} @else if $direction == left {
+		-webkit-transform: rotate(135) + deg;
+		-moz-transform: rotate(135) + deg;
+		transform: rotate(135) + deg;
+	} @else {
+		-webkit-transform: rotate($direction) + deg;
+		-moz-transform: rotate($direction) + deg;
+		transform: rotate($direction) + deg;
+	}
+}
+
+@mixin bg-gradient($angle: 180deg, $color: #0bd, $amount: 20%) {
+	background: linear-gradient($angle, $color, adjust-hue($color, $amount)) fixed;
+}
+
+@mixin gradient-text($angle: 45deg, $color: #f82, $amount: 35%) {
+	color: $color;
+	background: -webkit-linear-gradient($angle, $color, adjust-hue($color, $amount));
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	display: inline-block;
+}
+
+@mixin prefixes($property, $value) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+		#{$prefix}#{$property}: $value;
+	}
+}
+
+@mixin mediaquery($breakpoint: 768px) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin truncate($width: 100%) {
+	width: $width;
+	max-width: 100%;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+// https://ichimaruni-design.com/2016/02/sass-mixins/
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius + px;
+	-moz-border-radius: $radius + px;
+	border-radius: $radius + px;
+}
+
+@mixin border-radius-per($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// https://liginc.co.jp/web/html-css/css/64459
+@mixin middleline($height, $ie: 0) {
+	height: $height + px;
+	line-height: $height + px;
+	&:not(:target) {
+		line-height: $height + $ie + px + \9;
+	}
+	:root & {
+		line-height: $height + $ie + px + \9;
+	}
+}
+
+@mixin sprite_image($src, $display: block) {
+	@if $display == inline-block {
+		@include inline-block;
+	} @else {
+		display: $display;
+	}
+	background-image: url($src);
+	background-repeat: no-repeat;
+}
+
+// https://www.tam-tam.co.jp/tipsnote/html_css/post10708.html
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin m-min($breakpoint: md) {
+	@media (#{map-get($new-breakpoints, $breakpoint)} < width) {
+		@content;
+	}
+}
+@mixin m-max($breakpoint: md) {
+	@media (width <= #{map-get($new-breakpoints, $breakpoint)}) {
+		@content;
+	}
+}
+
+// https://blogs.adobe.com/creativestation/web-practical-sass-04-mixin-extend
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@function vw($size, $base: $base) {
+	@return ($size / $base * 100) + vw;
+}
+
+@function vw-sp($size, $base: $base_sp) {
+	@return ($size / $base * 100) + vw;
+}
+
+@function rem($size, $base: $base) {
+	@return ($size / $font_size) + rem;
+}
+
+@function rem_sp($size, $base: $base_sp) {
+	@return ($size / $font_size_sp) + rem;
+}
+
+@mixin flex-width($number, $gut: $gut) {
+	gap: $gut;
+	& > * {
+		@if $number == 1 {
+			width: 100%;
+		} @else {
+			width: calc((100% / #{$number}) - (#{$gut} * (#{$number} - 1) / #{$number}));
+		}
+	}
+}

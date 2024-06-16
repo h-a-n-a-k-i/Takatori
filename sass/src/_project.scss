@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+@use 'files' as *;
+
+/********************************************
+* Project
+********************************************/
+
+.p-home{
+    background: $color_base;
+    .c-top-about{
+        .c-title__h2--top{
+            margin-bottom: rem(110);
+            @include m-max(){
+                margin-bottom: rem_sp(30);
+            }
+        }
+        .c-inner{
+            padding: 0;
+            @include m-max(){
+                padding: rem_sp(60) rem_sp(20);
+            }
+            p{
+                @include m-max(){
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .c-top-service{
+        position: relative;
+        z-index: 1;
+        .c-inner{
+            padding-bottom: rem(180);
+            @include m-max(){
+                text-align: center;
+                padding-bottom: rem_sp(130);
+            }
+        }
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{rem(80)}), 0 100%);
+        @include m-max(){
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{rem_sp(80)}), 0 100%);
+        }
+    }
+    .c-top-value{
+        position: relative;
+        margin-top: rem(-80);
+        background: $color_main;
+        color: #fff;
+        @include m-max(){
+            margin-top: rem_sp(-80);
+            padding-top: rem_sp(80);
+        }
+        .c-eng{
+            font-size: rem(208);
+            color: rgba(255,255,255,.3);
+            @include m-max(){
+                font-size: rem_sp(50);
+            }
+        }
+        .c-title__h2--top{
+            font-size: rem(30);
+            margin: rem(-65) 0 rem(50);
+            @include m-max(){
+                font-size: rem_sp(18);
+                margin: 0 0 rem_sp(50);
+            }
+        }
+    }
+    .c-top-recruit{
+        color: #fff;
+        .c-inner{
+            position: relative;
+            z-index: 1;
+            padding: rem(150) 0;
+            @include m-max(){
+                padding: rem_sp(60) rem_sp(20);
+            }
+        }
+        .c-eng{
+            color: #fff;
+            @include m-max(){
+                text-align: center;
+            }
+        }
+        .c-title__h2--top{
+            @include m-max(){
+                text-align: center;
+                margin-bottom: rem_sp(30);
+            }
+        }
+        .c-btn--line-white{
+            padding: rem(15) rem(80) rem(15) rem(60);
+        }
+    }
+    .c-top-company{
+        .c-eng{
+            margin-top: rem(60);
+            position: relative;
+            z-index: 1;
+        }
+        .c-title__h2--top{
+            position: relative;
+            z-index: 1;
+            margin-bottom: rem(50);
+        }
+    }
+    .c-top-contact{
+        .c-eng{
+            color: #fff;
+        }
+        .c-title__h2--top{
+            margin-bottom: rem(35);
+        }
+    }
+}

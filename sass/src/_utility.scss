@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+@use "files" as *;
+
+/* Utilities */
+
+@for $i from 0 through 10 {
+	.u-mt#{ $i*10 } {
+		margin-top: $i * 10 + px;
+	}
+	.u-mb#{ $i*10 } {
+		margin-bottom: $i * 10 + px;
+	}
+}
+
+.u-pc {
+	display: block;
+	&--inline {
+		display: inline;
+	}
+	&--iblock {
+		display: inline-block;
+	}
+}
+.u-sp {
+	display: none;
+	&--inline {
+		display: none;
+	}
+	&--iblock {
+		display: none;
+	}
+}
+.u-ofit {
+	object-fit: cover;
+	font-family: "object-fit: cover;";
+}
+.u-pos {
+	&--absolute{
+		position: absolute;
+	}
+	&--fixed{
+		position: fixed;
+	}
+	&--relative {
+		position: relative;
+	}
+}
+.u-text{
+	&--default {
+		font-family: $font_family;
+	}
+	&--barlow{
+		font-family: $font_barlow;
+		line-height: 1;
+	}
+	&--center{
+		text-align: center;
+	}
+	&--left{
+		text-align: left;
+	}
+	&--right{
+		text-align: right;
+	}
+	&--thin{
+		font-weight: 100;
+	}
+	&--extra-light{
+		font-weight: 200;
+	}
+	&--light{
+		font-weight: 300;
+	}
+	&--regular{
+		font-weight: 400;
+	}
+	&--medium{
+		font-weight: 500;
+	}
+	&--semi-bold{
+		font-weight: 600;
+	}
+	&--bold{
+		font-weight: 700;
+	}
+	&--extra-bold{
+		font-weight: 800;
+	}
+	&--black{
+		font-weight: 900;
+	}
+	&--big{
+		font-size: 1.4em;
+	}
+	&--regular{
+		font-size: 1em;
+	}
+	&--small{
+		font-size: 0.8em;
+	}
+}
+.u-text_ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	background-color: #ccc;
+	line-height: 1.5;
+	&--multiline {
+		white-space: normal;
+		max-height: 3em;
+		position: relative;
+	}
+	&--multiline::after {
+		content: "…";
+		position: absolute;
+		display: block;
+		bottom: 0;
+		right: 0;
+		background-color: #ccc;
+	}
+	&--line2 {
+		max-height: 3em;
+	}
+	&--line3 {
+		max-height: 4.5em;
+	}
+	&--line4 {
+		max-height: 6em;
+	}
+	&--line5 {
+		max-height: 7.5em;
+	}
+}
+.u-color{
+	&__yellow{
+		color: $color_yellow;
+	}
+}
+
+@include m-max() {
+	.u-pc {
+		display: none;
+		&--inline {
+			display: none;
+		}
+		&--iblock {
+			display: none;
+		}
+	}
+	.u-sp {
+		display: block;
+		&--inline {
+			display: inline;
+		}
+		&--iblock {
+			display: inline-block;
+		}
+	}
+}
