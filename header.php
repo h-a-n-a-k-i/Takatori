@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="<?php echo $description;?>">
     <title><?php echo $title; ?></title>
+    <link rel="icon" href="./images/common/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
