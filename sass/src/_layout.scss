@@ -31,6 +31,7 @@
         transition: .8s;
         @include m-max(){
             width: rem_sp(178);
+            height: auto;
         }
         .is-scrolled &,
         .is-clicked &{

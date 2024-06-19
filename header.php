@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <meta name="description" content="<?php echo $description;?>">
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +23,11 @@
         <div class="l-header__logo"><a href="#" class="l-header__logo-link"></a></div>
         <nav class="l-header-nav">
             <ul class="l-header-nav__list">
-                <li class="l-header-nav__item"><a href="#" class="l-header-nav__link">高取興業について</a></li>
-                <li class="l-header-nav__item"><a href="#" class="l-header-nav__link">サービス</a></li>
-                <li class="l-header-nav__item"><a href="#" class="l-header-nav__link">採用情報</a></li>
-                <li class="l-header-nav__item l-header-nav__company"><a href="#" class="l-header-nav__link">会社情報</a></li>
-                <li class="l-header-nav__item l-header-nav__contact"><a href="#" class="l-header-nav__link u-text--barlow">CONTACT</a></li>
+                <li class="l-header-nav__item"><a href="#about" class="l-header-nav__link">高取興業について</a></li>
+                <li class="l-header-nav__item"><a href="#service" class="l-header-nav__link">サービス</a></li>
+                <li class="l-header-nav__item"><a href="#recruit" class="l-header-nav__link">採用情報</a></li>
+                <li class="l-header-nav__item l-header-nav__company"><a href="#company" class="l-header-nav__link">会社情報</a></li>
+                <li class="l-header-nav__item l-header-nav__contact"><a href="#contact" class="l-header-nav__link u-text--barlow">CONTACT</a></li>
             </ul>
         </nav>
         <div class="c-sp-menu">

@@ -1,6 +1,7 @@
 <?php
-$title = '有限会社高取興業'; ?>
-
+$title = '有限会社高取興業 | 愛知県海部郡大治町の一般貨物自動車運送事業会社';
+$description = '高取興業は、鋼材輸送をメインに営む一般貨物自動車運送事業会社です。お客様のニーズに応えられる様、安全を第一に考え、東海三県（愛知・三重・岐阜）を中心とした地域へ輸送いたします。取り扱う鋼材の種類は、鉄板、線材、丸棒等、多岐に渡っております。'
+?>
 <?php require('header.php'); ?>
 
 <main class="l-main">
@@ -17,13 +18,13 @@ $title = '有限会社高取興業'; ?>
             </div>
             <div class="c-mv__text">
                 <div class="c-mv__inner c-fade-in">
-                    <div class="c-mv__title">鋼材輸送の<br>エキスパート</div>
+                    <h1 class="c-mv__title">鋼材輸送の<br>エキスパート</h1>
                     <p class="c-mv__p">東海地方の鋼材輸送なら<br>高取興業にお任せください！</p>
                 </div>
             </div>
         </section>
 
-        <section class="c-top-about">
+        <section id="about" class="c-top-about">
             <div class="c-inner c-inner--small">
                 <div class="c-eng u-text--barlow u-text--center c-fade-in">ABOUT</div>
                 <h2 class="c-title__h2--top u-text--center c-fade-in">有限会社高取興業について</h2>
@@ -34,7 +35,7 @@ $title = '有限会社高取興業'; ?>
             </div>
         </section>
 
-        <section class="c-top-service">
+        <section id="service" class="c-top-service">
             <div class="c-inner">
                 <div class="c-eng u-text--barlow c-fade-in">SERVICE</div>
                 <h2 class="c-title__h2--top c-fade-in">サービス情報</h2>
@@ -73,7 +74,7 @@ $title = '有限会社高取興業'; ?>
             </div>
         </section>
 
-        <section class="c-top-recruit">
+        <section id="recruit" class="c-top-recruit">
             <div class="c-top-recruit__filter"></div>
             <div class="c-inner">
                 <div class="c-top-recruit__inner">
@@ -91,7 +92,7 @@ $title = '有限会社高取興業'; ?>
             </div>
         </section>
 
-        <section class="c-top-company">
+        <section id="company" class="c-top-company">
             <div class="c-inner c-inner--small">
                 <img src="./images/home/symbol@2x.webp" alt="" class="c-top-company__img" width="232" height="219">
                 <div class="c-eng u-text--barlow u-text--center c-fade-in">COMPANY</div>
@@ -145,7 +146,7 @@ $title = '有限会社高取興業'; ?>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.7820129221413!2d136.8187633768487!3d35.16205687275944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60039df740bde853%3A0xaaa5327734b179da!2z5pel5pys44CB44CSNDkwLTExNDMg5oSb55-l55yM5rW36YOo6YOh5aSn5rK755S656CC5a2Q5a-65bGL5pW377yY77yY77yV!5e0!3m2!1sja!2sca!4v1718306524350!5m2!1sja!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="c-fade-in"></iframe>
         </section>
 
-        <section class="c-top-contact">
+        <section id="contact" class="c-top-contact">
             <div class="c-inner c-inner--small">
                 <div class="c-eng u-text--barlow u-text--center c-fade-in">CONTACT</div>
                 <h2 class="c-title__h2--top u-text--center c-fade-in">まずはお気軽にお問い合わせください</h2>
