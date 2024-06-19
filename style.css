@@ -216,6 +216,8 @@ a:hover.rollover img {
 /* IE7 */
 html {
   font-size: calc(100vw / 1280 * 16);
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
 }
 @media (1280px < width) {
   html {
@@ -225,6 +227,7 @@ html {
 @media (width <= 768px) {
   html {
     font-size: calc(100vw / 375 * 15);
+    scroll-padding-top: 4rem;
   }
 }
 

@@ -25,7 +25,7 @@ $(function () {
     });
   }
 
-  $('.c-sp-menu').on('click', function () {
+  $('.c-sp-menu, .l-header-nav__link').on('click', function () {
     $('body').toggleClass('is-clicked');
   });
   checkFadeIn();

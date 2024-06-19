@@ -24,7 +24,7 @@ $(function () {
         })
     }
 
-    $('.c-sp-menu').on('click', function () {
+    $('.c-sp-menu, .l-header-nav__link').on('click', function () {
         $('body').toggleClass('is-clicked');
     });
 
@@ -36,17 +36,5 @@ $(function () {
         } else {
             $('body').removeClass('is-scrolled');
         }
-    });
-
-    $('a[href^="#"]').click(function () {
-        var adjust = 0;
-        var speed = 400;
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top + adjust;
-        $('body,html').animate({
-            scrollTop: position
-        }, speed, 'swing');
-        return false;
     });
 })
