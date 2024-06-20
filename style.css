@@ -292,7 +292,7 @@ p {
 @media (width <= 768px) {
   .l-header__logo {
     width: 11.8666666667rem;
-    height: auto;
+    height: 1.7333333333rem;
   }
 }
 .is-scrolled .l-header__logo, .is-clicked .l-header__logo {
